@@ -1,0 +1,17 @@
+[Unit]
+Description=IP_Script
+Requires=network-online.target
+After=network.target network-online.target multi-user.target
+Wants=network-online.target
+
+[Service]
+ExecStart=/home/ubuntu/test2.sh  
+Restart=on-failure
+RestartSec=10
+SuccessExitStatus=0
+Type=simple
+
+
+[Install]
+WantedBy=multi-user.target
+
