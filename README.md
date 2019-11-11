@@ -243,8 +243,12 @@ In another terminal source the setup file and then run a listener:
 . ~/ros2_dashing/install/local_setup.bash
 ros2 run demo_nodes_py listener
 ```
+#### step 7: Install OpenCV
+```
+sudo apt-get install python3-opencv python3-pillow -y
+```
 
-#### step 7: Install Pytorch
+#### step 8: Install Pytorch
 Verify your python version and arch  
 ```
 python3 --version
