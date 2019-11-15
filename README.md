@@ -245,12 +245,18 @@ In another terminal source the setup file and then run a listener:
 . ~/ros2_dashing/install/local_setup.bash
 ros2 run demo_nodes_py listener
 ```
-#### step 7: Install OpenCV
+#### step 7: Update firmware
+```
+sudo curl -L --output /usr/bin/rpi-update https://raw.githubusercontent.com/Hexxeh/rpi-update/master/rpi-update && sudo chmod +x /usr/bin/rpi-update
+sudo rpi-update
+```
+
+#### step 8: Install OpenCV
 ```
 sudo apt-get install python3-opencv python3-pillow -y
 ```
 
-#### step 8: Install Pytorch
+#### step 9: Install Pytorch
 Verify your python version and arch  
 ```
 python3 --version
