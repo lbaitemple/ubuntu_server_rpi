@@ -258,7 +258,19 @@ sudo grep gpio /etc/group
 sudo chown root.gpio /dev/gpiomem
 sudo chmod g+rw /dev/gpiomem
 ```
+GPIO python testcode
+```
+import RPi.GPIO as GPIO
+import time
 
+GPIO.setmode(GPIO.BCM) # Broadcom pin-numbering scheme
+GPIO.setup(18, GPIO.OUT)
+
+print "work.... for 5 sec ...."
+time.sleep(5)
+GPIO.cleanup()
+
+```
 #### step 9: Install OpenCV
 ```
 sudo apt-get install python3-opencv python3-pillow -y
