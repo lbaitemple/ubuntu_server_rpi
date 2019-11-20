@@ -250,13 +250,21 @@ ros2 run demo_nodes_py listener
 sudo curl -L --output /usr/bin/rpi-update https://raw.githubusercontent.com/Hexxeh/rpi-update/master/rpi-update && sudo chmod +x /usr/bin/rpi-update
 sudo rpi-update
 ```
+#### step 8: GPIO run as non-root (/dev/mem no access)
+```
+sudo groupadd gpio
+sudo usermod -a -G gpio ubuntu
+sudo grep gpio /etc/group
+sudo chown root.gpio /dev/gpiomem
+sudo chmod g+rw /dev/gpiomem
+```
 
-#### step 8: Install OpenCV
+#### step 9: Install OpenCV
 ```
 sudo apt-get install python3-opencv python3-pillow -y
 ```
 
-#### step 9: Install Pytorch
+#### step 10: Install Pytorch
 Verify your python version and arch  
 ```
 python3 --version
@@ -277,6 +285,7 @@ mkdir pytorch_install && cd pytorch_install
 git clone --recursive https://github.com/pytorch/pytorch
 cd pytorch
 ```
+
 
 ###### setup environment variables
 ```
