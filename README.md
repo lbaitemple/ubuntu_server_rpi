@@ -257,6 +257,8 @@ sudo usermod -a -G gpio ubuntu
 sudo grep gpio /etc/group
 sudo chown root.gpio /dev/gpiomem
 sudo chmod g+rw /dev/gpiomem
+echo "sudo chown root.gpio /dev/gpiomem" >> ~/.bashrc
+echo "sudo chmod g+rw /dev/gpiomem" >> ~/.bashrc
 ```
 GPIO python testcode
 ```
