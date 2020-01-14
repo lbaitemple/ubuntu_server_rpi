@@ -1,4 +1,4 @@
-# Ubuntu Server 18.04.2 (Bionic) ARM image for Raspberry Pi 3 B+
+# Ubuntu Server 18.04.2/18.04.3 (Bionic) ARM image for Raspberry Pi 3 B+
 Kernel https://www.andreasch.com/2018/05/08/rpi3-kernel-aarch64/
 
 ### Download image
@@ -88,7 +88,7 @@ sudo usermod -G i2c $USER
 
 ### step 3: Setup everything for IP 
 
-* To get wireless connection working on boot you must edit **/etc/netplan/01-rpi-3-network.yaml** present in *cloudimg-rootfs* partition in your sdcard and add your SSID and PASSWORD.
+* To get wireless connection working on boot you must edit **/etc/netplan/01-rpi-3-network.yaml** present in *cloudimg-rootfs* partition in your sdcard and add your SSID and PASSWORD using a HDMI screen monitor.
 Open file
 For 18.04.2
 ```
