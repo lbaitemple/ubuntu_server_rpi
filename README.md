@@ -100,7 +100,7 @@ sudo nano /etc/netplan/50-cloud-init.yaml
 ```
 
 
-Please include the following content and make sure you generate your password hash (see line include command 
+Please include the following content and make sure you generate your password 32-character hash (see line include command 
 
  ![#f03c15](https://placehold.it/15/f03c15/000000?text=+) `echo -n [password] | iconv -t UTF-16LE | openssl md4`
  
@@ -127,7 +127,7 @@ network:
                                    identity: lbai
 
 ```
-In the above configuration file, we have two wifi networks. You can change wifi access point ssid and password. For the tusecurewireless network, you will need to replace tuaccess ID in "idenitity" field (replace lbai as tuxxxx) and insert a 32-character hash based on the password using "echo -n ...." command
+In the above configuration file, we have two wifi networks. You can change wifi access point ssid and password. For the tusecurewireless network, you will need to replace your tuaccess ID in "idenitity" field (For example, replace lbai as tuxxxx) and insert a 32-character hash based on the password using "echo -n ...." command
 
 After you save the configuration file, you can apply netplan
 ```
