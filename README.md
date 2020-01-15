@@ -117,7 +117,7 @@ network:
                 optional: true
                 dhcp4: true
                 access-points:
-                        "L5GLB":
+                        "HOMEWIFIACCESSPOINT":
                                 password: "password123"
                         tusecurewireless:
                                 auth:
@@ -127,8 +127,9 @@ network:
                                    identity: lbai
 
 ```
+In the above configuration file, we have two wifi networks. You can change wifi access point ssid and password. For the tusecurewireless network, you will need to replace tuaccess ID in "idenitity" field (replace lbai as tuxxxx) and insert a 32-character hash based on the password using "echo -n ...." command
 
-To apply netplan
+After you save the configuration file, you can apply netplan
 ```
 sudo netplan --debug generate
 sudo netplan try
