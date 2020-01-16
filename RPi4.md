@@ -1,5 +1,4 @@
 # Ubuntu Server 18.04.3 (Bionic) ARM image for Raspberry Pi 4
-Kernel https://www.andreasch.com/2018/05/08/rpi3-kernel-aarch64/
 
 ### Download image
 https://github.com/TheRemote/Ubuntu-Server-raspi4-unofficial/releases
@@ -201,7 +200,136 @@ rosdep update
 echo "source /opt/ros/melodic/setup.bash" >> ~/.bashrc
 ```
 
-### step 6: Install ROS2  [make sure you have a 32-bit image installed. Not completely tested it]
+### step 6: Setup USB-C OTG
+#### open configuration file
+```
+sudo nano /boot/firmware/config.txt
+```
+add a line to the end of the file
+```
+dtoverlay=dwc2
+```
+
+#### open cmdline file
+```
+sudo nano /boot/firmware/cmdline.txt
+```
+add below to the end of the first line
+```
+modules-load=dwc2 
+```
+#### open moddule file
+```
+sudo nano /etc/modules
+```
+add  a line to the end of the file
+```
+libcomposite 
+```
+
+#### open dhcpcd.conf file
+```
+sudo nano  /etc/dhcpcd.conf
+```
+add  a line to the end of the file
+```
+denyinterfaces usb0 
+```
+
+###### Install dnsmasq
+```
+sudo apt-get install dnsmasq
+sudo nano /etc/dnsmasq.d/usb
+```
+Add the following content
+```
+interface=usb0
+dhcp-range=10.55.0.2,10.55.0.6,255.255.255.248,1h
+dhcp-option=3
+leasefile-ro
+```
+
+###### Install ifdownup
+```
+sudo apt-get install ifupdown
+sudo nano /etc/network/interfaces
+```
+Add the following content
+```
+auto usb0
+allow- usb0
+iface usb0 inet static
+  address 10.55.0.1
+  netmask 255.255.255.248
+```
+
+#### create a startup file
+```
+sudo nano /root/usb.sh
+```
+Add the following content
+```
+#!/bin/bash
+cd /sys/kernel/config/usb_gadget/
+mkdir -p pi4
+cd pi4
+echo 0x1d6b > idVendor # Linux Foundation
+echo 0x0104 > idProduct # Multifunction Composite Gadget
+echo 0x0100 > bcdDevice # v1.0.0
+echo 0x0200 > bcdUSB # USB2
+echo 0xEF > bDeviceClass
+echo 0x02 > bDeviceSubClass
+echo 0x01 > bDeviceProtocol
+mkdir -p strings/0x409
+echo "fedcba9876543211" > strings/0x409/serialnumber
+echo "Ben Hardill" > strings/0x409/manufacturer
+echo "PI4 USB Device" > strings/0x409/product
+mkdir -p configs/c.1/strings/0x409
+echo "Config 1: ECM network" > configs/c.1/strings/0x409/configuration
+echo 250 > configs/c.1/MaxPower
+# Add functions here
+# see gadget configurations below
+# End functions
+mkdir -p functions/ecm.usb0
+HOST="00:dc:c8:f7:75:14" # "HostPC"
+SELF="00:dd:dc:eb:6d:a1" # "BadUSB"
+echo $HOST > functions/ecm.usb0/host_addr
+echo $SELF > functions/ecm.usb0/dev_addr
+ln -s functions/ecm.usb0 configs/c.1/
+udevadm settle -t 5 || :
+ls /sys/class/udc > UDC
+ifup usb0
+service dnsmasq restart
+```
+
+#### create rc.local file
+```
+sudo nano /etc/rc.local
+```
+Add the following content
+```
+#!/bin/sh -e
+#
+# rc.local
+#
+# This script is executed at the end of each multiuser runlevel.
+# Make sure that the script will "exit 0" on success or any other
+# value on error.
+#
+# In order to enable or disable this script just change the execution
+# bits.
+#
+# By default this script does nothing.
+/root/usb.sh
+
+exit 0
+```
+
+#### make /root/usb.sh executable
+```
+sudo chmod +x /root/usb.sh
+```
+### step 7: Install ROS2  [make sure you have a 32-bit image installed. Not completely tested it]
 https://index.ros.org/doc/ros2/Installation/Dashing/Linux-Install-Debians/#install-ros-2-packages
 
 
@@ -240,12 +368,12 @@ In another terminal source the setup file and then run a listener:
 . ~/ros2_dashing/install/local_setup.bash
 ros2 run demo_nodes_py listener
 ```
-#### step 7: Update firmware
+#### step 8: Update firmware
 ```
 sudo curl -L --output /usr/bin/rpi-update https://raw.githubusercontent.com/Hexxeh/rpi-update/master/rpi-update && sudo chmod +x /usr/bin/rpi-update
 sudo rpi-update
 ```
-#### step 8: GPIO run as non-root (/dev/mem no access)
+#### step 9: GPIO run as non-root (/dev/mem no access)
 ```
 sudo groupadd gpio
 sudo usermod -a -G gpio ubuntu
@@ -268,12 +396,12 @@ time.sleep(5)
 GPIO.cleanup()
 
 ```
-#### step 9: Install OpenCV
+#### step 10: Install OpenCV
 ```
 sudo apt-get install python3-opencv python3-pillow -y
 ```
 
-#### step 10: Install Pytorch
+#### step 11: Install Pytorch
 Verify your python version and arch  
 ```
 python3 --version
