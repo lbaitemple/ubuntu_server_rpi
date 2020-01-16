@@ -3,7 +3,7 @@
 ### Download image
 https://github.com/TheRemote/Ubuntu-Server-raspi4-unofficial/releases
 
-64-bit
+64-bit (download server version without GUI)
 
 https://github.com/TheRemote/Ubuntu-Server-raspi4-unofficial/releases/download/v26/ubuntu-18.04.3-preinstalled-server-arm64+raspi4.img.xz
 
