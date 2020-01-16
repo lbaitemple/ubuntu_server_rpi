@@ -238,7 +238,7 @@ denyinterfaces usb0
 
 ###### Install dnsmasq
 ```
-sudo apt-get install dnsmasq
+sudo apt-get install dnsmasq -y
 sudo nano /etc/dnsmasq.d/usb
 ```
 Add the following content
@@ -251,7 +251,7 @@ leasefile-ro
 
 ###### Install ifdownup
 ```
-sudo apt-get install ifupdown
+sudo apt-get install ifupdown -y
 sudo nano /etc/network/interfaces
 ```
 Add the following content
@@ -327,6 +327,7 @@ exit 0
 
 #### make /root/usb.sh executable
 ```
+sudo chmod +x /etc/rc.local
 sudo chmod +x /root/usb.sh
 ```
 ### step 7: Install ROS2  [make sure you have a 32-bit image installed. Not completely tested it]
