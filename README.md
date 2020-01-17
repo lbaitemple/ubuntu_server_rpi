@@ -301,6 +301,30 @@ git clone --recursive https://github.com/pytorch/pytorch
 cd pytorch
 ```
 
+#### step 11: create jupyter
+
+```
+sudo apt-get update
+sudo apt-get install python3-matplotlib python3-scipy python3-pip -y
+sudo pip3 install jupyter
+sudo apt-get clean
+sudo update-alternatives --config x-www-browser
+sudo reboot
+```
+Create an alias in .bashrc
+```
+nano .bashrc
+```
+Add
+```
+alias runserver='jupyter notebook  --port 8888 --ip  '
+```
+Save the file and you can run
+```
+source ~/.bashrc
+runserver ip_address
+```
+
 ###### setup environment variables
 ```
 export NO_CUDA=1
