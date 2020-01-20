@@ -325,6 +325,17 @@ source ~/.bashrc
 runserver ip_address
 ```
 
+#### step 12: setup raspi-config
+
+```
+sudo wget https://archive.raspberrypi.org/debian/pool/main/r/raspi-config/raspi-config_20160527_all.deb -P /tmp
+sudo apt-get install libnewt0.52 whiptail parted triggerhappy lua5.1 alsa-utils -y
+sudo apt-get install -fy
+sudo dpkg -i /tmp/raspi-config_20160527_all.deb
+
+sudo echo "/dev/mmcblk0p1  /boot           vfat    defaults          0       2">> /etc/fstab
+```
+
 ###### setup environment variables
 ```
 export NO_CUDA=1
