@@ -14,4 +14,4 @@ m_topic="raspberry/ipaddress"
 echo "Starting script sayIPbs "
 private=`hostname -I | sed -E -e 's/[[:blank:]]+/_/g' `
 res=`mosquitto_pub -h $m_server -p $m_port -u $m_user -P $m_pass -t $m_topic -m $private  > /dev/null 2>&1`
-test=` python /home/ubuntu/stats.py`
+#test=` python /home/ubuntu/stats.py`
