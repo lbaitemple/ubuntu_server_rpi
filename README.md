@@ -100,7 +100,7 @@ sudo nano /etc/netplan/50-cloud-init.yaml
 ```
 
 
-Please include the following content and make sure you generate your password 32-character hash (see line include command 
+Please include the following content and make sure you generate your password 32-character hash using a linux shell (e.g. aws ec2 instantce. After the hash is generated, save the hash for netplan setup below)
 
  ![#f03c15](https://placehold.it/15/f03c15/000000?text=+) `echo -n [password] | iconv -t UTF-16LE | openssl md4`
  
