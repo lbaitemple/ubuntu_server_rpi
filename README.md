@@ -300,7 +300,22 @@ mkdir pytorch_install && cd pytorch_install
 git clone --recursive https://github.com/pytorch/pytorch
 cd pytorch
 ```
+###### setup environment variables
+```
+export NO_CUDA=1
+export NO_DISTRIBUTED=1
+export NO_MKLDNN=1 
+export NO_NNPACK=1
+export NO_QNNPACK=1
+```
 
+AFter that, you can start building (source, wheel)
+```
+python3 setup.py build
+python3 setup.py sdist bdist_wheel
+sudo -E python3 setup.py install
+
+```
 #### step 11: create jupyter
 
 ```
@@ -336,20 +351,5 @@ sudo dpkg -i /tmp/raspi-config_20160527_all.deb
 sudo echo "/dev/mmcblk0p1  /boot           vfat    defaults          0       2">> /etc/fstab
 ```
 
-###### setup environment variables
-```
-export NO_CUDA=1
-export NO_DISTRIBUTED=1
-export NO_MKLDNN=1 
-export NO_NNPACK=1
-export NO_QNNPACK=1
-```
 
-AFter that, you can start building (source, wheel)
-```
-python3 setup.py build
-python3 setup.py sdist bdist_wheel
-sudo -E python3 setup.py install
-
-```
 * Filesystem will be expanded to fit your SD Card size on first boot.
