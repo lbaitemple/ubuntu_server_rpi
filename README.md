@@ -28,7 +28,7 @@ Check your system architecture, you can use
  uname -m
 ```
 
-SSH is enabled by default, so you can login directly after first boot. However, it is recommended to connect to ethernet and use a HDMI screen to upgrade the system first. 
+SSH is enabled by default, so you can login directly after first boot. However, it is recommended to connect to ethernet and use a HDMI screen and a keyboard to upgrade the system first. 
 
 ```
 sudo apt-get update
@@ -44,7 +44,10 @@ sudo apt-get upgrade -y
 #### upgrade may take up to 30 mins. When a selection is requested, please use TAB key to select yes option.
 
 ### step 2: Setup I2C
-After the system is upgraded in step 1, you can ssh to the raspberry pi in step 2 when your computer and your pi are on the same LAN. 
+After the system is upgraded in step 1, you can ssh to the raspberry pi in step 2 when your computer and your pi are on the same LAN. You can check the ip address using the command
+```
+ifconfig
+```
 
 
 After login, you can use the following commands by copying and pasting into the ssh shell
@@ -323,7 +326,6 @@ sudo apt-get update
 sudo apt-get install python3-matplotlib python3-scipy python3-pip -y
 sudo pip3 install jupyter
 sudo apt-get clean
-sudo update-alternatives --config x-www-browser
 sudo reboot
 ```
 Create an alias in .bashrc
