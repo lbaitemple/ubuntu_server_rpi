@@ -7,6 +7,8 @@ sudo apt-get install linux-raspi2 libraspberrypi-bin  libraspberrypi-bin-nonfree
 sudo chmod 777 /dev/vchiq
 sudo apt-get install libjpeg8-dev imagemagick libv4l-dev -y
 sudo apt-get install libopencv-core-dev libopencv-dev libraspberrypi-dev -y
+sudo apt-get install python3-pip -y
+sudo pip3 install picamera
 ```
 ### enable raspi-cam
 add content in config.txt
@@ -19,4 +21,9 @@ disable_camera_led=1  # optional, if you don't want the led to glow
 review
 ```
 raspivid -t 0
+```
+runt the python file
+```
+wget https://raw.githubusercontent.com/lbaitemple/ubuntu_server_rpi/master/torch/rpi_camera_surveillance_system.py
+python3 rpi_camera_surveillance_system.py
 ```
