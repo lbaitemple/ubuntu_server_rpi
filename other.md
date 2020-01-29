@@ -15,3 +15,8 @@ start_x=1             # essential
 gpu_mem=128           # at least, or maybe more if you wish
 disable_camera_led=1  # optional, if you don't want the led to glow
 ```
+
+review
+```
+raspivid -t 0
+```
