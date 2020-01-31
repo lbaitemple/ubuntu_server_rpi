@@ -27,3 +27,21 @@ runt the python file
 wget https://raw.githubusercontent.com/lbaitemple/ubuntu_server_rpi/master/torch/rpi_camera_surveillance_system.py
 python3 rpi_camera_surveillance_system.py
 ```
+
+#### bluetooth
+
+In /etc/dbus-1/system.d/bluetooth.conf, add
+```
+<policy user="ubuntu">
+  <allow own="org.bluez"/>
+  <allow send_destination="org.bluez"/>
+  <allow send_interface="org.bluez.GattCharacteristic1"/>
+  <allow send_interface="org.bluez.GattDescriptor1"/>
+  <allow send_interface="org.freedesktop.DBus.ObjectManager"/>
+  <allow send_interface="org.freedesktop.DBus.Properties"/>
+</policy>
+```
+restart the bluetooth
+```
+sudo systemctl restart dbus
+```
