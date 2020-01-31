@@ -151,6 +151,8 @@ You can open test2.sh and modify cloud MQTT setting. If you do not have a cloud 
 ```
 nano ~/test2.sh
 ```
+Go to line 17 remove '#' ("#test=` python /home/ubuntu/stats.py`)
+
 
 You will need to ensure a startup service to enable network
 ```
