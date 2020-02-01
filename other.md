@@ -32,8 +32,8 @@ python3 rpi_camera_surveillance_system.py
 
 Install bluetooth z
 ```
-wget www.kernel.org/pub/linux/bluetooth/bluez-5.52.tar.x
-tar xvf bluez-5.52.tar.xz && cd bluez-5.52
+wget www.kernel.org/pub/linux/bluetooth/bluez-5.52.tar.gz
+tar xvf bluez-5.52.tar.gz && cd bluez-5.52
 ./configure --prefix=/usr --mandir=/usr/share/man --sysconfdir=/etc --localstatedir=/var --enable-experimental 
 make -j4
 sudo make install
