@@ -39,8 +39,8 @@ sudo apt-get install libdbus-1-dev libudev-dev libical-dev libreadline-dev -y
 make -j4
 sudo make install
 mkdir ble-uart-peripheral && cd ble-uart-peripheral
-cp ~/bluez-5.52/test/example-gatt-server.py ./example_gatt_server.py
-cp ~/bluez-5.52/test/example-advertisement.py ./example_advertisement.py
+cp ~/bluez-5.52/test/example-gatt-server ./example_gatt_server.py
+cp ~/bluez-5.52/test/example-advertisement ./example_advertisement.py
 nano ~/ble-uart-peripheral/uart_peripheral.py
 ```
 Include following content
