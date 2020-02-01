@@ -464,6 +464,11 @@ AFter that, you can start building (source, wheel)
 python3 setup.py build
 python3 setup.py sdist bdist_wheel
 sudo -E python3 setup.py install
+```
 
+
+####
+```
+sudo dpkg --add-architecture amd64
 ```
 * Filesystem will be expanded to fit your SD Card size on first boot.
