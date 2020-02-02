@@ -35,6 +35,7 @@ Install bluetooth z [http://rrbluetoothx.blogspot.com/2016/04/rr-bluetooth-compi
 wget www.kernel.org/pub/linux/bluetooth/bluez-5.50.tar.gz
 tar xvf bluez-5.50.tar.gz && cd bluez-5.50
 sudo apt-get install libdbus-1-dev libudev-dev libical-dev libreadline-dev -y
+sudo apt install haveged libblockdev-mdraid2 wireless-tools iw rfkill bluez libnewt0.52 whiptail lua5.1 git bc curl unzip build-essential libgmp-dev libmpfr-dev libmpc-dev libssl-dev bison flex -y
 ./configure --prefix=/usr --mandir=/usr/share/man --sysconfdir=/etc --localstatedir=/var --enable-experimental 
 make -j4
 sudo make install
@@ -202,6 +203,7 @@ In /etc/dbus-1/system.d/bluetooth.conf, add
 ```
 restart the bluetooth
 ```
+rfkill block bluetooth
 sudo systemctl restart dbus
 sudo ln -s /lib/firmware /etc/firmware
 sudo hciattach /dev/ttyAMA0 bcm43xx 921600 -
