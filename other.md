@@ -32,15 +32,15 @@ python3 rpi_camera_surveillance_system.py
 
 Install bluetooth z [http://rrbluetoothx.blogspot.com/2016/04/rr-bluetooth-compile-bluez-539.html]
 ```
-wget www.kernel.org/pub/linux/bluetooth/bluez-5.52.tar.gz
-tar xvf bluez-5.52.tar.gz && cd bluez-5.52
+wget www.kernel.org/pub/linux/bluetooth/bluez-5.50.tar.gz
+tar xvf bluez-5.50.tar.gz && cd bluez-5.50
 sudo apt-get install libdbus-1-dev libudev-dev libical-dev libreadline-dev -y
 ./configure --prefix=/usr --mandir=/usr/share/man --sysconfdir=/etc --localstatedir=/var --enable-experimental 
 make -j4
 sudo make install
 mkdir ble-uart-peripheral && cd ble-uart-peripheral
-cp ~/bluez-5.52/test/example-gatt-server ./example_gatt_server.py
-cp ~/bluez-5.52/test/example-advertisement ./example_advertisement.py
+cp ~/bluez-5.50/test/example-gatt-server ./example_gatt_server.py
+cp ~/bluez-5.50/test/example-advertisement ./example_advertisement.py
 nano ~/ble-uart-peripheral/uart_peripheral.py
 ```
 Include following content
