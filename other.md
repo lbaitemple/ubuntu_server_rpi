@@ -208,7 +208,15 @@ sudo systemctl restart dbus
 sudo ln -s /lib/firmware /etc/firmware
 sudo hciattach /dev/ttyAMA0 bcm43xx 921600 -
 ```
+Try to revise the exe file
+```
+sudo nano /lib/systemd/system/bluetooth.service
+```
 
+Add
+```
+ExecStart=/usr/local/libexec/bluetooth/bluetoothd -E
+```
 ```
 sudo add-apt-repository ppa:bluetooth/bluez
 ```
