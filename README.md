@@ -271,8 +271,10 @@ sudo chown root.gpio /dev/gpiomem
 sudo chmod g+rw /dev/gpiomem
 echo "sudo chown root.gpio /dev/gpiomem" >> ~/.bashrc
 echo "sudo chmod g+rw /dev/gpiomem" >> ~/.bashrc
+echo "sudo chown root.gpio /dev/mem" >> ~/.bashrc
+echo "sudo chmod g+rw /dev/mem" >> ~/.bashrc
 ```
-GPIO python testcode
+Reboot, and you can ry to run GPIO python testcode
 ```
 import RPi.GPIO as GPIO
 import time
