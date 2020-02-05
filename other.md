@@ -8,6 +8,7 @@ sudo chmod 777 /dev/vchiq
 sudo apt-get install libjpeg8-dev imagemagick libv4l-dev -y
 sudo apt-get install libopencv-core-dev libopencv-dev libraspberrypi-dev -y
 sudo apt-get install python3-pip -y
+sudo usermod -a -G video $USER
 sudo pip3 install picamera
 ```
 ### enable raspi-cam
