@@ -10,6 +10,8 @@ Restart=on-failure
 RestartSec=10
 SuccessExitStatus=0
 Type=simple
+RemainAfterExit=false
+
 
 
 [Install]
