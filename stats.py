@@ -28,6 +28,22 @@ from PIL import ImageDraw
 from PIL import ImageFont
 
 import subprocess
+import signal
+import time
+
+class GracefulKiller:
+  kill_now = False
+  def __init__(self,display):
+    self.display=display
+    signal.signal(signal.SIGINT, self.exit_gracefully)
+    signal.signal(signal.SIGTERM, self.exit_gracefully)
+
+  def exit_gracefully(self,signum, frame):
+    print "exit"
+    self.display.clear()
+    self.display.display()
+    self.kill_now = True
+
 
 # Raspberry Pi pin configuration:
 RST = None     # on the PiOLED this pin isnt used
@@ -103,7 +119,10 @@ font = ImageFont.load_default()
 # Some other nice fonts to try: http://www.dafont.com/bitmap.php
 # font = ImageFont.truetype('Minecraftia.ttf', 8)
 
-while True:
+killer = GracefulKiller(disp)
+
+while not killer.kill_now:
+
 
     # Draw a black filled box to clear the image.
     draw.rectangle((0,0,width,height), outline=0, fill=0)
