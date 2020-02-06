@@ -155,7 +155,7 @@ Go to line 17, you will see
 ```
 #test=` python /home/ubuntu/stats.py`
 ```
-Remove # to enable I2C screen display, so it looks like
+Remove # to enable I2C screen display if it is present, so it looks like
 ```
 test=` python /home/ubuntu/stats.py`
 ```
