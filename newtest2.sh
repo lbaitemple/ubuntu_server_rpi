@@ -26,4 +26,3 @@ for i in $(seq 1 ${#data[@]}); do
         exit 0
     fi
 done
-
