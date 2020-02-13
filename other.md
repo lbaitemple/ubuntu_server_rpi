@@ -221,3 +221,10 @@ ExecStart=/usr/local/libexec/bluetooth/bluetoothd -E
 ```
 sudo add-apt-repository ppa:bluetooth/bluez
 ```
+
+```
+sudo dpkg -i --force-overwrite /var/cache/apt/archives/mesa-common-dev_19.2.8-0ubuntu0~18.04.2_armhf.deb
+
+ sudo apt -f install
+
+```
