@@ -29,6 +29,8 @@ wget https://raw.githubusercontent.com/lbaitemple/ubuntu_server_rpi/master/torch
 python3 rpi_camera_surveillance_system.py
 ```
 
+Then you can check the video stream by using a browser window by typing http://[pi_ip]:8000
+
 #### bluetooth
 
 Install bluetooth z [http://rrbluetoothx.blogspot.com/2016/04/rr-bluetooth-compile-bluez-539.html]
