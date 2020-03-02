@@ -7,7 +7,7 @@ Rename the card "system_boot"
 copy all of the files from the usb drive to root of sd card 
 
 Edit the cmdline.txt file On the SD card, change /dev/mmcblkp2 to /dev/sda2 and save the file.
-
+```
 1.place both usb and sdcard in the pi and boot
 2.go thru the setup and let the installation take place
 3.After installtion is complete and your at the home screen open the terminal
@@ -26,4 +26,5 @@ Edit the cmdline.txt file On the SD card, change /dev/mmcblkp2 to /dev/sda2 and 
 16.After the resizing process run df -h to make sure it has resized.
 17. from the terminal edit the file sudo nano /etc/fstab
 18. edit the line that has /dev/mmcblk0p2 to /dev/sda2 and save the file
+```
 Thats it all done!﻿
