@@ -363,7 +363,7 @@ sudo dpkg -i /tmp/raspi-config_20160527_all.deb
 sudo echo "/dev/mmcblk0p1  /boot           vfat    defaults          0       2">> /etc/fstab
 ```
 
-#### step 13
+#### step 13: utility to download a subfolder in a Github link
 
 ```
 sudo apt-get install nodejs-dev node-gyp libssl1.0-dev
