@@ -363,5 +363,12 @@ sudo dpkg -i /tmp/raspi-config_20160527_all.deb
 sudo echo "/dev/mmcblk0p1  /boot           vfat    defaults          0       2">> /etc/fstab
 ```
 
+#### step 13
 
+```
+sudo apt-get install nodejs-dev node-gyp libssl1.0-dev
+sudo apt-get install npm
+sudo npm install -g github-files-fetcher
+fetcher --url="hyper_link"
+```
 * Filesystem will be expanded to fit your SD Card size on first boot.
