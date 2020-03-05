@@ -370,4 +370,9 @@ sudo apt-get install nodejs-dev node-gyp libssl1.0-dev npm -y
 sudo npm install -g github-files-fetcher
 fetcher --url="hyper_link"
 ```
+
+#### step 14: storage benchmark testing
+```
+sudo curl https://raw.githubusercontent.com/TheRemote/PiBenchmarks/master/Storage.sh | sudo bash
+```
 * Filesystem will be expanded to fit your SD Card size on first boot.
