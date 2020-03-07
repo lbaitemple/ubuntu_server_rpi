@@ -214,7 +214,7 @@ dtoverlay=dwc2
 ```
 sudo nano /boot/firmware/cmdline.txt
 ```
-add below to the end of the first line
+add below before "root=" (make sure that is one line)
 ```
 modules-load=dwc2 
 ```
