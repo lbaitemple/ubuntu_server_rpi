@@ -465,7 +465,27 @@ python3 setup.py build
 python3 setup.py sdist bdist_wheel
 sudo -E python3 setup.py install
 ```
-
+#### step 14: boot from usb
+```
+sudo fdisk /dev/sda
+[n, p, y]
+sudo mkfs.ext4 /dev/sda
+sudo mkdir /media/external
+sudo mount /dev/sda /media/external
+sudo ysnc -avx --exclude /media/external / /media/external
+```
+Change /boot/firmware/cmdline.txt
+```
+root=/dev/mmcblk0p2
+```
+to
+```
+root=/dev/sda
+```
+Reboot the system, run the following command to see if the system is running from usb
+```
+findmnt -n -o SOURCE /
+```
 
 ####
 ```
