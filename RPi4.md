@@ -474,7 +474,7 @@ sudo mkdir /media/external
 sudo mount /dev/sda /media/external
 sudo rsync -avx --exclude /media/external / /media/external
 ```
-Change /boot/firmware/cmdline.txt
+** Change /boot/firmware/cmdline.txt
 ```
 root=/dev/mmcblk0p2
 ```
@@ -482,6 +482,15 @@ to
 ```
 root=/dev/sda
 ```
+*** Change /boot/firmware/nobtcmd.txt
+```
+root=LABEL=writable
+```
+to
+```
+root=/dev/sda
+```
+
 Reboot the system, run the following command to see if the system is running from usb
 ```
 findmnt -n -o SOURCE /
