@@ -472,7 +472,7 @@ sudo fdisk /dev/sda
 sudo mkfs.ext4 /dev/sda
 sudo mkdir /media/external
 sudo mount /dev/sda /media/external
-sudo ysnc -avx --exclude /media/external / /media/external
+sudo rsync -avx --exclude /media/external / /media/external
 ```
 Change /boot/firmware/cmdline.txt
 ```
