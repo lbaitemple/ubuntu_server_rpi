@@ -299,10 +299,10 @@ python3 --version
 ```
 If you have 3.6 and arch=32-bit
 ```
-wget https://github.com/lbaitemple/ubuntu_server_rpi/raw/master/torch/torch-1.4.0a0%2Bbc91e19-cp36-cp36m-linux_armv7l.whl
-sudo pip3 install torch-1.4.0a0%2Bbc91e19-cp36-cp36m-linux_armv7l.whl
-wget https://github.com/lbaitemple/ubuntu_server_rpi/raw/master/torch/torchvision-0.5.0a0%2B95131de-cp36-cp36m-linux_armv7l.whl
-sudo pip3 install torchvision-0.5.0a0%2B95131de-cp36-cp36m-linux_armv7l.whl
+wget https://github.com/lbaitemple/ubuntu_server_rpi/raw/master/torch/torch-1.6.0a0+521910e-cp36-cp36m-linux_armv7l.whl
+sudo pip3 install torch-1.6.0a0+521910e-cp36-cp36m-linux_armv7l.whl
+wget https://github.com/lbaitemple/ubuntu_server_rpi/raw/master/torch/torchvision-0.7.0a0+fed843d-cp36-cp36m-linux_armv7l.whl
+sudo pip3 install torchvision-0.7.0a0+fed843d-cp36-cp36m-linux_armv7l.whl
 ```
 If you have other version, please go to torch folder to find a correct version torch and torchvision wheel to install.
 If you want to install from source, please follow the procedures below. However, it takes really long time (2 days for me in a raspberry pi 3B+).
