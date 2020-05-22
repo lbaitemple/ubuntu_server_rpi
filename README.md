@@ -257,6 +257,10 @@ In another terminal source the setup file and then run a listener:
 . ~/ros2_dashing/install/local_setup.bash
 ros2 run demo_nodes_py listener
 ```
+### step 6a: Install ROS2 - 64 bit (Eloquent)   
+https://index.ros.org/doc/ros2/Installation/Eloquent/Linux-Install-Debians/#install-ros-2-packages
+
+
 #### step 7: Update firmware
 ```
 sudo curl -L --output /usr/bin/rpi-update https://raw.githubusercontent.com/Hexxeh/rpi-update/master/rpi-update && sudo chmod +x /usr/bin/rpi-update
