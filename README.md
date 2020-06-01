@@ -142,24 +142,16 @@ You may have to reboot to get IP address up. Now you can setup MQTT client in st
 ```
 cd ~
 git clone https://github.com/lbaitemple/ubuntu_server_rpi
-cp ubuntu_server_rpi/newtest2.sh ~/test2.sh
-cp ubuntu_server_rpi/stats.py ~/
-chmod +x test2.sh
+sudo cp ubuntu_server_rpi/newtest2.sh /root/test2.sh
+sud cp ubuntu_server_rpi/stats.py /root/
+sudo chmod +x /root/test2.sh
 ```
 
 You can open test2.sh and modify cloud MQTT setting. If you do not have a cloud MQTT account, please go to https://www.cloudmqtt.com/ to setup one free account. 
 ```
-nano ~/test2.sh
+sudo nano /root/test2.sh
 ```
-Go to line 17, you will see
-```
-#test=` python /home/ubuntu/stats.py`
-```
-Remove # to enable I2C screen display if it is present, so it looks like
-```
-test=` python /home/ubuntu/stats.py`
-```
-
+to 
 You will need to ensure a startup service to enable network
 ```
 sudo systemctl is-enabled systemd-networkd-wait-online.service
