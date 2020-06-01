@@ -93,11 +93,8 @@ sudo usermod -G i2c $USER
 
 * To get wireless connection working on boot you must edit **/etc/netplan/01-rpi-3-network.yaml** present in *cloudimg-rootfs* partition in your sdcard and add your SSID and PASSWORD using a HDMI screen monitor.
 Open file
-For 18.04.2
-```
-sudo nano /etc/netplan/01-rpi-3-network.yaml
-```
-For 18.04.3
+
+For 18.04.4
 ```
 sudo nano /etc/netplan/50-cloud-init.yaml
 ```
@@ -151,12 +148,17 @@ You can open test2.sh and modify cloud MQTT setting. If you do not have a cloud 
 ```
 sudo nano /root/test2.sh
 ```
-to 
+to modify the following values for your MQTT services [m_server, m_port, m_user, m_pass and m_topic]
+
 You will need to ensure a startup service to enable network
 ```
-sudo systemctl is-enabled systemd-networkd-wait-online.service
 sudo systemctl enable systemd-networkd-wait-online.service
 ```
+To check if the systemd will wait for the pi to get online, you can use
+```
+sudo systemctl is-enabled systemd-networkd-wait-online.service
+```
+
 Now, you will need to create a startup service
 ```
 sudo cp ~/ubuntu_server_rpi/ipaddress.service /lib/systemd/system
