@@ -8,11 +8,10 @@ https://github.com/AbelCS/ubuntu-server-bionic-rpi-3-b-plus/releases/download/18
 Or
 32-bit
 
-http://cdimage.ubuntu.com/releases/bionic/release/ubuntu-18.04.4-preinstalled-server-armhf+raspi3.img.xz
 http://cdimage.ubuntu.com/releases/18.04.5/release/ubuntu-18.04.5-preinstalled-server-armhf+raspi3.img.xz
+
 64-bit
 
-http://cdimage.ubuntu.com/releases/bionic/release/ubuntu-18.04.4-preinstalled-server-arm64+raspi3.img.xz
 http://cdimage.ubuntu.com/releases/18.04.5/release/ubuntu-18.04.5-preinstalled-server-arm64+raspi3.img.xz
 
 ## Instructions
