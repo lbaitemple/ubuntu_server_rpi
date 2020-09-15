@@ -140,7 +140,7 @@ You may have to reboot to get IP address up. Now you can setup MQTT client in st
 cd ~
 git clone  https://github.com/lbaitemple/ubuntu_server_rpi
 sudo cp ubuntu_server_rpi/newtest2.sh /root/test2.sh
-sud cp ubuntu_server_rpi/stats.py /root/
+sudo cp ubuntu_server_rpi/stats.py /root/
 sudo chmod +x /root/test2.sh
 ```
 
