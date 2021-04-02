@@ -261,6 +261,12 @@ allow-hotplug usb0
 iface usb0 inet static
   address 10.55.0.1
   netmask 255.255.255.248
+  
+allow-hotplug wlan0
+iface wlan0 inet dhcp
+wpa-conf /etc/wpa_supplicant/wpa_supplicant.conf
+iface default inet dhcp
+
 ```
 
 #### create a startup file
