@@ -22,7 +22,7 @@ for i in $(seq 1 ${#data[@]}); do
     line=(${data[$i]})
     echo ${line[@]:1} | grep -qw "$m_i2c"
     if [ $? -eq 0 ]; then
-        test=` python /root/stats.py`
+        test=` python3 /root/stats.py`
         exit 0
     fi
 done
