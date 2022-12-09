@@ -39,7 +39,6 @@ class GracefulKiller:
     signal.signal(signal.SIGTERM, self.exit_gracefully)
 
   def exit_gracefully(self,signum, frame):
-    print "exit"
     self.display.clear()
     self.display.display()
     self.kill_now = True
@@ -143,7 +142,7 @@ while not killer.kill_now:
 
     # Write two lines of text.
 
-    draw.text((x, top),       "IP: " + str(IP),  font=font, fill=255)
+    draw.text((x, top),       "IP: " + IP.encode('utf8').strip(),  font=font, fill=255)
     draw.text((x, top+8),     "TEMP: " + str(TMP) + " C", font=font, fill=255)
  #   draw.text((x, top+16),    str(MemUsage),  font=font, fill=255)
  #   draw.text((x, top+25),    str(Disk),  font=font, fill=255)
