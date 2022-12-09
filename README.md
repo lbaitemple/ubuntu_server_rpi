@@ -382,7 +382,11 @@ sudo apt-get install -fy
 sudo dpkg -i /tmp/raspi-config_20160527_all.deb
 
 sudo echo "/dev/mmcblk0p1  /boot           vfat    defaults          0       2">> /etc/fstab
+
+sudo cp ~/ubuntu_server_rpi/config.txt /boot/firmware/config.txt
+sudo reboot
 ```
+
 
 #### step 13: utility to download a subfolder or a file in a Github link
 
