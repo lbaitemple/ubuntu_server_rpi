@@ -381,7 +381,7 @@ sudo apt-get install libnewt0.52 whiptail parted triggerhappy lua5.1 alsa-utils 
 sudo apt-get install -fy
 sudo dpkg -i /tmp/raspi-config_20160527_all.deb
 
-sudo echo "/dev/mmcblk0p1  /boot           vfat    defaults          0       2">> /etc/fstab
+sudo bash -c 'echo "/dev/mmcblk0p1  /boot           vfat    defaults          0       2">> /etc/fstab'
 
 sudo cp ~/ubuntu_server_rpi/config.txt /boot/firmware/config.txt
 sudo reboot
