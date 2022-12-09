@@ -138,6 +138,7 @@ sudo netplan try
 You may have to reboot to get IP address up. Now you can setup MQTT client in startup script file
 ```
 cd ~
+sudo pip3 install Adafruit_GPIO Adafruit_SSD1306
 git clone  -b python3 https://github.com/lbaitemple/ubuntu_server_rpi
 sudo cp ubuntu_server_rpi/newtest2.sh /root/test2.sh
 sudo cp ubuntu_server_rpi/stats.py /root/
