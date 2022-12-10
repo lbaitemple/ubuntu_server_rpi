@@ -53,8 +53,8 @@ ifconfig
 After login, you can use the following commands by copying and pasting into the ssh shell
 When everything is completed, you will need to do the following commands to enable I2C
 ```
-sudo apt-get install python-pip python-pil  i2c-tools git mosquitto-clients -y
-sudo pip install Adafruit_SSD1306 RPi.GPIO
+sudo apt-get install python3-pip python3-pil  i2c-tools git mosquitto-clients -y
+sudo pip3 install Adafruit_SSD1306 RPi.GPIO
 ```
 
 To enable I2c permission
