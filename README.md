@@ -1,4 +1,4 @@
-# Ubuntu Server 18.04.2/18.04.3 (Bionic) ARM image for Raspberry Pi 3 B+
+# Ubuntu Server 18.04.2/18.04.3 (Bionic) ARM image setup for Raspberry Pi
 Kernel https://www.andreasch.com/2018/05/08/rpi3-kernel-aarch64/
 
 ### Download image
